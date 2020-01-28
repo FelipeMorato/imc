@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context=".MainActivity"
+              android:orientation="vertical">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:background="#98B5C2"
+                  android:padding="10dp">
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Calculadora IMC"
+                  android:textSize="32sp"
+                  android:textStyle="bold"
+                  android:textAlignment="center"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:layout_weight="0.5"
+                      android:gravity="center">
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="12dp"
+                          android:layout_marginBottom="12dp">
+                <TextView
+                        style="@style/label_form"
+                        android:text="Peso (kg)"/>
+                <TextView
+                        style="@style/label_form"
+                        android:text="Altura (m)"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                            >
+                <EditText
+                        style="@style/editText_form"
+                        android:id="@+id/etPeso"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"/>
+                <EditText
+                        style="@style/editText_form"
+                        android:id="@+id/etAltura"
+                        android:inputType="number"/>
+            </LinearLayout>
+
+            <Button
+                    style="@style/button_calc"
+                    android:text="Calcular"
+                    android:id="@+id/btCalcular"/>
+
+        </LinearLayout>
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:background="#B2CCB2">
+
+                <TextView android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:text="Seu índice é: "
+                          android:textSize="26sp"
+                          android:textStyle="bold"
+                          android:textAlignment="center"
+                          android:id="@+id/tvIMC"/>
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/masc_ideal"
+                        android:layout_below="@+id/tvIMC"
+                        android:layout_above="@+id/tvIMCStatus"
+                        android:id="@+id/imgIMCStatus"/>
+                <TextView
+                        android:id="@+id/tvIMCStatus"
+                        android:textAlignment="center"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Peso Ideal"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
